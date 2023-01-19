@@ -1,0 +1,38 @@
+<script type="text/javascript"
+        src="{{ url_for('static' , filename = 'jQuery v2.2.0 min.js')}}"></script>
+<script>
+    $(function(){
+    window.setInterval(function(){
+    loadNewDecimal()
+    },1000)
+    function loadNewDecimal(){
+    $.ajax({
+    url:"/update_decimal",
+    type:"POST",
+    dataType: "json",
+    success: function(data){
+        $(x).replaceWith(data)
+    }
+
+<!--    });-->
+<!--    }-->
+<!--    });-->
+
+
+</script>
+
+<!--<div id="x">-->
+<!--    {{ x }}-->
+<!--</div>-->
+
+{{ x }}
+
+<script>
+ function(data) {
+        $('#x').text(data.x);
+    console.log(data);
+    }
+<!--    x=x-->
+<!--    console.log({{ x }})-->
+
+</script>
